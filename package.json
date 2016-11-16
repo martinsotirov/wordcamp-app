@@ -1,0 +1,53 @@
+{
+  "name": "wordcamp-app",
+  "version": "1.0.0",
+  "description": "A demo SPA for WordCamp Barcelona 2016",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martin Sotirov",
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-open": "^2.0.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.2.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vue": "^2.0.6",
+    "vue-resource": "^1.0.3",
+    "vue-router": "^2.0.2",
+    "vueify": "^9.3.0",
+    "vueify-insert-css": "^1.0.0",
+    "vuex": "^2.0.0"
+  },
+  "dependencies": {
+    "browserify": "^13.1.1",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-open": "^2.0.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.2.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vue": "^2.0.6",
+    "vue-resource": "^1.0.3",
+    "vue-router": "^2.0.2",
+    "vueify": "^9.3.0",
+    "vueify-insert-css": "^1.0.0",
+    "vuex": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinSotirov/wordcamp-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MartinSotirov/wordcamp-app/issues"
+  },
+  "homepage": "https://github.com/MartinSotirov/wordcamp-app#readme"
+}
