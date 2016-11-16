@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <p>hai</p>
     </div>
 </template>
 
