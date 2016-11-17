@@ -1,5 +1,4 @@
 var gulp       = require('gulp'),
-    open       = require('gulp-open'),
     connect    = require('gulp-connect'),
     browserify = require('browserify'),
     vueify     = require('vueify')
@@ -10,21 +9,24 @@ var gulp       = require('gulp'),
     sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('open', function() {
-    gulp.src('index.html')
+    gulp.src('./www/index.html')
         .pipe(open('<%file.path%>', {url: 'http://localhost:8080'} ));
 });
 
 gulp.task('connect', function() {
-    connect.server({ livereload: true });
+    connect.server({
+        livereload: true,
+        root: 'www'
+    });
 });
 
 gulp.task('html', function() {
-    gulp.src('*.html')
+    gulp.src('./www/*.html')
         .pipe(connect.reload());
 });
 
 gulp.task('javascript', function() {
-    gulp.src('*.js')
+    gulp.src('src/*.js')
         .pipe(connect.reload());
 });
 
@@ -37,16 +39,14 @@ gulp.task('compileVue', function() {
         .bundle()
         .pipe(source('app.js'))
         .pipe(buffer())
-        .pipe(gulp.dest('public/'))
+        .pipe(gulp.dest('www/js/'))
         .pipe(livereload());
 });
 
 gulp.task('watch', function() {
     livereload.listen();
 
-    gulp.watch(['*.html'], ['html']);
     gulp.watch(['src/**/*.js', 'src/**/*.vue'], ['compileVue']);
 });
  
-//gulp.task('default', ['connect', 'watch', 'open']);
 gulp.task('default', ['connect', 'watch']);
