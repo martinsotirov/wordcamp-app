@@ -1,6 +1,8 @@
 <template>
     <div id="app">
         <p>Hai there 3</p>
+        <p>{{ window }}</p>
+        <p>{{ document }}</p>
         <p>{{ wordcamps.length }}</p>
         <ul>
             <li v-for="wordcamp in wordcamps">{{ wordcamp.title}}</li>
@@ -17,12 +19,16 @@
 
         data: function() {
             return {
-                wordcamps: []
+                wordcamps: [],
+                isWeb: location.href.indexOf('http') === 0
             };
         },
 
         created: function() {
-            this.$http.get('https://central.wordcamp.org/wp-json/posts', {
+
+            var api = this.isWeb ? '/wordcamps.json' : 'https://central.wordcamp.org/wp-json/posts'
+
+            this.$http.get(api, {
                 params: {
                     'type': 'wordcamp',
                     'filter[posts_per_page]': '50',
@@ -32,16 +38,11 @@
                 var wordcamps = response.body.filter(function(el) {
                     return el.status === 'wcpt-scheduled';
                 });
-                this.wordcamps = wordcamps;
 
-                console.log('----- RESPONSE -----' + '\n');
-                console.log(wordcamps);
-                console.log('----- END RESPONSE -----' + '\n');
+                this.wordcamps = wordcamps;
             })
             .catch(function(error) {
-                console.log('----- ERROR -----' + '\n');
                 console.log(error);
-                console.log('----- END ERROR -----' + '\n');
             });
         },
 
