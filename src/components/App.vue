@@ -7,6 +7,8 @@
         <ul>
             <li v-for="wordcamp in wordcamps">{{ wordcamp.title}}</li>
         </ul>
+
+        <router-view></router-view>
     </div>
 </template>
 
