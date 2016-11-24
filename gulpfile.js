@@ -30,6 +30,13 @@ gulp.task('javascript', function() {
         .pipe(connect.reload());
 });
 
+gulp.task('sass', function() {
+    gulp.src('src/scss/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('www/css'))
+        .pipe(livereload());
+});
+
 gulp.task('compileVue', function() {
     browserify({
         entries: 'src/app.js',
@@ -46,6 +53,7 @@ gulp.task('compileVue', function() {
 gulp.task('watch', function() {
     livereload.listen();
 
+    gulp.watch('src/scss/**/*.scss', ['sass']);
     gulp.watch(['src/**/*.js', 'src/**/*.vue'], ['compileVue']);
 });
  
