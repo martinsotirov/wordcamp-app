@@ -22,6 +22,8 @@
     <!--Settings-->
     <preference name="DisallowOverscroll" value="true" />
     <preference name="Orientation" value="portrait" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
 
     <!--iOS Settings-->
     <preference name="TopActivityIndicator" value="white"/>
