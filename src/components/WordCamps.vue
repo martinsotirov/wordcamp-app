@@ -1,11 +1,15 @@
 <template>
-    <ul>
-        <li v-for="wordcamp in wordcamps">
-            <router-link :to="{name: 'wordcamp', params: {id: wordcamp.ID}}">
-                {{ wordcamp.title}}
-            </router-link>
-        </li>
-    </ul>
+    <div class="wordcamps">
+        <h2>Upcoming WordCamps</h2>
+
+        <ul>
+            <li v-for="wordcamp in wordcamps">
+                <router-link :to="{name: 'wordcamp', params: {id: wordcamp.ID}}">
+                    {{ wordcamp.title}}
+                </router-link>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script>

@@ -1,18 +1,17 @@
-var gulp       = require('gulp'),
-    connect    = require('gulp-connect'),
-    browserify = require('browserify'),
-    vueify     = require('vueify')
-    source     = require('vinyl-source-stream'),
-    buffer     = require('vinyl-buffer'),
-    sass       = require('gulp-sass'),
-    livereload = require('gulp-livereload'),
-    sourcemaps = require('gulp-sourcemaps');
+var gulp           = require('gulp'),
+    connect        = require('gulp-connect'),
+    browserify     = require('browserify'),
+    vueify         = require('vueify')
+    source         = require('vinyl-source-stream'),
+    buffer         = require('vinyl-buffer'),
+    sass           = require('gulp-sass'),
+    livereload     = require('gulp-livereload'),
+    base64         = require('gulp-base64'),
+    sourcemaps     = require('gulp-sourcemaps');
 
-gulp.task('open', function() {
-    gulp.src('./www/index.html')
-        .pipe(open('<%file.path%>', {url: 'http://localhost:8080'} ));
-});
-
+/**
+ * Start web server
+ */
 gulp.task('connect', function() {
     connect.server({
         livereload: true,
@@ -30,13 +29,20 @@ gulp.task('javascript', function() {
         .pipe(connect.reload());
 });
 
+/**
+ * Compile sass
+ */
 gulp.task('sass', function() {
     gulp.src('src/scss/*.scss')
         .pipe(sass())
+        .pipe(base64())
         .pipe(gulp.dest('www/css'))
         .pipe(livereload());
 });
 
+/**
+ * Compile Vue.js
+ */
 gulp.task('compileVue', function() {
     browserify({
         entries: 'src/app.js',

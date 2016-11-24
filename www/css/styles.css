@@ -404,8 +404,15 @@ template {
 
 body {
   background: #e0f5fa;
-  color: #424242; }
+  color: #424242;
+  font-family: "Open Sans", "Arial", sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Serif", serif; }
 
 a {
   text-decoration: none;
   color: #028db9; }
+
+.wordcamps ul {
+  list-style: none; }
