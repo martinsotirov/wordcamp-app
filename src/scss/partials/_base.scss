@@ -1,5 +1,4 @@
 body {
-    background: $light-blue;
     color: $black;
     font-family: $sans;
 }
@@ -14,7 +13,60 @@ a {
 }
 
 .wordcamps {
-    ul {
-        list-style: none;
+    list-style: none;
+    padding: 0 1em;
+    margin: 0;
+
+    .wordcamp-preview {
+        border-bottom: 1px solid $light-gray;
+        padding: 1em 0;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    .wordcamp-title {
+        margin: 0 0 .5em;
+    }
+
+    .dates {
+        color: $gray;
+    }
+}
+
+.content {
+
+    header {
+        background: $light-blue;
+        padding: .5em 1em;
+        position: relative;
+
+        .back-btn {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            left: 1em;
+            display: block;
+            width: 30px;
+            height: 30px;
+            text-indent: -9999px;
+            background: url(../images/back-arrow.svg) no-repeat;
+        }
+
+        .screen-title {
+            text-align: center;
+        }
+    }
+}
+
+.wordcamp-page {
+    header {
+        h2 {
+            padding-left: 1.5em;
+        }
+    }
+    .wordcamp {
+        padding: 1em;
     }
 }

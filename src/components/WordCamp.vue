@@ -1,9 +1,12 @@
 <template>
-    <div class="wordcamp-page">
-        <router-link to="/wordcamps">Back</router-link>
+    <div class="content wordcamp-page">
+
+        <header>
+            <router-link to="/wordcamps" class="back-btn">Back</router-link>
+            <h2 v-if="wordcamp" class="screen-title">{{ wordcamp.title }}</h2>
+        </header>
 
         <div class="wordcamp" v-if="wordcamp">
-            <h2>{{ wordcamp.title }}</h2>
             <div class="content" v-html="wordcamp.content"></div>
             <dl v-for="meta in wordcamp.post_meta">
                 <dt>{{ meta.key }}</dt>
