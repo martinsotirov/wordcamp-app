@@ -17,6 +17,18 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+
+        <!-- icons -->
+        <icon src="src/images/icon-60@3x.png" width="180" height="180" />
+        <icon src="src/images/icon-60@2x.png" width="120" height="120" />
+        <icon src="src/images/icon-60.png" width="60" height="60" />
+
+        <!-- splash screens -->
+        <splash src="src/images/iphone-3.png" width="320" height="480" />
+        <splash src="src/images/iphone-4.png" width="640" height="960" />
+        <splash src="src/images/iphone-5.png" width="640" height="1136" />
+        <splash src="src/images/iphone-6.png" width="750" height="1334" />
+        <splash src="src/images/iphone-6-plus.png" width="1242" height="2208" />
     </platform>
 
     <!--Settings-->
