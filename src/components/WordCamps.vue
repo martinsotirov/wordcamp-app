@@ -43,7 +43,7 @@
                         endDate = new Date(parseInt(meta.value) * 1000);
                     }
                 });
-                console.log(wordcamp.title, startDate);
+
                 if (typeof startDate === 'object' && !isNaN(startDate.getDate())) {
                     dates += startDate.getDate() + ' ' + months[startDate.getMonth()] + ' ' + startDate.getFullYear();
                 }
