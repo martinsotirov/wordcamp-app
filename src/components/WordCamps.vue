@@ -47,7 +47,9 @@
                 if (typeof startDate === 'object' && !isNaN(startDate.getDate())) {
                     dates += startDate.getDate() + ' ' + months[startDate.getMonth()] + ' ' + startDate.getFullYear();
                 }
-                if (typeof endDate === 'object' && !isNaN(endDate.getDate())) {
+                if (typeof endDate === 'object' && !isNaN(endDate.getDate())
+                    && startDate.getDate() !== endDate.getDate()) {
+
                     dates += ' – ' + endDate.getDate() + ' ' + months[endDate.getMonth()] + ' ' + endDate.getFullYear();
                 }
                 return dates;
